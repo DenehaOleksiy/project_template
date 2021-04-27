@@ -37,5 +37,11 @@ pipeline {
                 '''
             }
         }
+        stage("delete docker image") {
+            steps {
+                echo " ============== start deleting image =================="
+                sh 'docker rmi -f lvivavtodor/toolbox:latest . '
+            }
+        }
     }
 }
